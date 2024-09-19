@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "151414284898",
+    "project_id": "esavior-a0437",
+    "storage_bucket": "esavior-a0437.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151414284898:android:defb02ce0152e22824673b",
+        "android_client_info": {
+          "package_name": "com.example.e_saviour"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYLzSi-XL66Thv9Yrc8ICTmfrMEiAm-xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

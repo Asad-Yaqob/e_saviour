@@ -1,3 +1,4 @@
+import 'package:e_saviour/services/auth.dart';
 import 'package:e_saviour/user/screens/widgets/form_field.dart';
 import 'package:e_saviour/user/screens/widgets/rect_btn.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class LoginForm extends StatelessWidget {
               height: 20,
             ),
             CustomFormField(
+              isObsecure: false,
                 myController: userEmail,
                 label: 'User Email',
                 icon: const Icon(Icons.email)),
@@ -35,13 +37,16 @@ class LoginForm extends StatelessWidget {
               height: 20,
             ),
             CustomFormField(
+              isObsecure: true,
                 myController: userPass,
                 label: 'User Password',
                 icon: const Icon(Icons.password)),
             const SizedBox(
               height: 20,
             ),
-           const RectBtn(label: 'Log In',)
+            RectBtn(label: 'Log In',onPressbutton: () {
+              MyServices.userLogin(userEmail, userPass, context);
+            },)
           ],
         ),
       ),

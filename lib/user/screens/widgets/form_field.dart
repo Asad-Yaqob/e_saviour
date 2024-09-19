@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CustomFormField extends StatelessWidget {
-   const CustomFormField({super.key, required this.myController, required this.label, required this.icon});
+   const CustomFormField({super.key, required this.myController, required this.label, required this.icon, required this.isObsecure});
 
    final TextEditingController myController;
    final String label;
    final Icon icon;
+   final bool isObsecure;
 
   @override
   Widget build(BuildContext context) {
     return
       TextFormField(
         controller: myController,
+        obscureText: isObsecure,
         decoration: InputDecoration(
           fillColor: const Color.fromARGB(193, 244, 67, 54),
           filled: true,
