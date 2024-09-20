@@ -27,11 +27,12 @@ class CustomFormField extends StatelessWidget {
       controller: myController,  
       obscureText: isObsecure,  
       cursorColor: AppColors.disabledIconColor,
+      style: const TextStyle(color: AppColors.navyBlue),
       decoration: InputDecoration(  
         fillColor:  AppColors.lightBlueBackground, // Light blue background  
         filled: true,  
         labelText: label,  
-        labelStyle: const TextStyle(color: AppColors.navyBlue, fontWeight: FontWeight.bold), // Color for the label  
+        labelStyle: const TextStyle(color: AppColors.navyBlue,), // Color for the label  
         prefixIcon: icon,  
         prefixIconConstraints: const BoxConstraints(  
           minWidth: 40,  

@@ -42,7 +42,7 @@ class MyServices {
      userLog.setString("userEmail", userEmail.text);
 
      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Login Successful!")));
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SplashScreen(),));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SplashScreen(),));
     } on FirebaseAuthException catch (e){
       ScaffoldMessenger.of(context).showSnackBar( SnackBar(content: Text("$e")));
     }
