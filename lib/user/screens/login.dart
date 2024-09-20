@@ -1,5 +1,5 @@
 import 'package:e_saviour/constants/app_colors.dart';
-import 'package:e_saviour/services/auth.dart';
+import 'package:e_saviour/services/firebase_services.dart';
 import 'package:e_saviour/user/widgets/form_field.dart';
 import 'package:e_saviour/user/widgets/rect_btn.dart';
 import 'package:flutter/material.dart';

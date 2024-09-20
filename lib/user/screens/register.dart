@@ -5,7 +5,7 @@ import 'package:e_saviour/user/widgets/register_form.dart';
 import 'package:e_saviour/user/screens/login.dart';
 import 'package:e_saviour/user/widgets/rect_btn.dart';
 import 'package:flutter/material.dart';
-import 'package:e_saviour/services/auth.dart';
+import 'package:e_saviour/services/firebase_services.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
