@@ -26,7 +26,7 @@ class MyServices {
           email: userEmail.text, password: userPass.text);
           addUser(user);
           print(user);
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Registration Successful!")));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Registration Successful!")));
 
     }on FirebaseAuthException catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("$e")));

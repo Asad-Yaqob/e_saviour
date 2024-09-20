@@ -29,6 +29,7 @@ class LoginForm extends StatelessWidget {
               height: 20,
             ),
             CustomFormField(
+              keyboardType: TextInputType.emailAddress,
               isObsecure: false,
                 myController: userEmail,
                 label: 'User Email',
@@ -37,6 +38,7 @@ class LoginForm extends StatelessWidget {
               height: 20,
             ),
             CustomFormField(
+              keyboardType: TextInputType.text,
               isObsecure: true,
                 myController: userPass,
                 label: 'User Password',
