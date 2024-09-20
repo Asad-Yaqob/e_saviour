@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_saviour/constants/app_colors.dart';
 import 'package:e_saviour/models/user.dart';
 import 'package:e_saviour/user/widgets/register_form.dart';
@@ -46,19 +45,19 @@ class _RegisterFormState extends State<RegisterForm> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Column(
+             const Column(
                 children: [
-                  const SizedBox(height: 60.0),
-                  const Text(
+                   SizedBox(height: 60.0),
+                   Text(
                     "Sign up",
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: AppColors.brightBlue),
                   ),
-                  const SizedBox(height: 20),
+                   SizedBox(height: 20),
                   Text(
                     "Create your account",
-                    style: TextStyle(fontSize: 15, color: Colors.grey[700]),
+                    style: TextStyle(fontSize: 15, color:AppColors.navyBlue),
                   ),
-                  const SizedBox(height: 20),
+                   SizedBox(height: 20),
                 ],
               ),
               MyRegisterForm(
@@ -78,14 +77,16 @@ class _RegisterFormState extends State<RegisterForm> {
                         password.text.isEmpty ||
                         address.text.isEmpty ||
                         mobileNumber.text.isEmpty) {
+                      ScaffoldMessenger.of(context).clearSnackBars();
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text("Please fill all fields.")));
+                          content: Text("Please fill all fields."), backgroundColor: AppColors.darkerRed,));
                       return;
                     }
 
                     if (password.text != conPassword.text) {
+                      ScaffoldMessenger.of(context).clearSnackBars();
                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text("Passwords do not match.")));
+                          content: Text("Passwords do not match."), backgroundColor: AppColors.darkerRed,));
                       return;
                     }
 
@@ -94,8 +95,6 @@ class _RegisterFormState extends State<RegisterForm> {
                       userEmail: userEmail.text,
                       address: address.text,
                       phone: mobileNumber.text,
-                      createdAt: Timestamp.now(),
-                      updatedAt: Timestamp.now(),
                     );
                     MyServices.userRegister(user, userEmail, password, context);
                   }),

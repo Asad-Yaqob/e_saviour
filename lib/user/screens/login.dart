@@ -23,6 +23,7 @@ class LoginForm extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 30,
+                color: AppColors.brightBlue,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -48,6 +49,13 @@ class LoginForm extends StatelessWidget {
               height: 20,
             ),
             RectBtn(label: 'Log In',onPressbutton: () {
+                // First, validate the input fields
+                    if (userEmail.text.isEmpty || userPass.text.isEmpty ) {
+                      ScaffoldMessenger.of(context).clearSnackBars();
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text("Please fill all fields."), backgroundColor: AppColors.darkerRed,));
+                      return;
+                    }
               MyServices.userLogin(userEmail, userPass, context);
             },)
           ],

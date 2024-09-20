@@ -23,7 +23,7 @@ class RectBtn extends StatelessWidget {
                   ),
                   child: Text(
                     label,
-                    style: const TextStyle(fontSize: 20, color: AppColors.navyBlue),
+                    style: const TextStyle(fontSize: 20, color: AppColors.brightBlue),
                   ),
                 ),
               );

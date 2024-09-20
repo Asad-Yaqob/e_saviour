@@ -4,14 +4,14 @@ import 'package:uuid/uuid.dart';
 const uuid = Uuid();
 
 class UserModel {
-  UserModel(
-      {required this.userName,
-      required this.userEmail,
-      required this.address,
-      required this.phone,
-      required this.createdAt,
-      required this.updatedAt})
-      : id = uuid.v4();
+  UserModel({
+    required this.userName,
+    required this.userEmail,
+    required this.address,
+    required this.phone,
+  })  : id = uuid.v4(),
+        createdAt = Timestamp.now(),
+        updatedAt = Timestamp.now();
 
   final String id;
   final String userName;
@@ -29,8 +29,8 @@ class UserModel {
       'userEmail': userEmail,
       'phone': phone,
       'address': address,
-      'createdAt': createdAt, 
-      'updatedAt': updatedAt, 
+      'createdAt': createdAt,
+      'updatedAt': updatedAt,
     };
   }
 }
